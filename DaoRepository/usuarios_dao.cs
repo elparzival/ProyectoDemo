@@ -120,16 +120,16 @@ namespace DaoRepository
             }
         }
 
-        public bool Actualizar(usuarios_dto dto)
+        public bool Eliminar(string rut)
         {
             using (IDbConnection conn = F.ObtenerMotor(FactoryConnection.eMotor.SqlServer))
             {
                 int result = 0;
                 string query = string.Empty;
-                query = "UPDATE usuarios set nombre_completo = @nombre_completo, password = @password where rut = @rut";
+                query = "UPDATE usuarios set estado = 0 where rut = @rut";
                 try
                 {
-                    result = conn.Execute(query, dto);
+                    result = conn.Execute(query, rut);
                 }
                 catch (Exception ex)
                 {

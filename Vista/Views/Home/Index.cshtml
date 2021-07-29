@@ -4,22 +4,28 @@
     ViewData["Title"] = "Usuarios";
 }
 
+@section Styles
+{
+    <link href="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+}
+
 <h1>Usuarios</h1>
 
 <p>
-    <a asp-action="Add">Agregar usuario</a>
+    <a asp-action="Add" class="btn btn-success">Agregar usuario</a>
 </p>
-<table class="table">
+<table class="table" id="example" width="100%">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.rut)
+                Rut
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nombre_completo)
+                Nombre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.password)
+                Password
             </th>
             <th></th>
         </tr>
@@ -38,11 +44,22 @@
                     @Html.DisplayFor(modelItem => item.password)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { rut = item.rut }) |
-                    @Html.ActionLink("Details", "Details", new { rut = item.rut }) |
-                    @Html.ActionLink("Delete", "Delete", new { rut = item.rut })
+                <i class="fa fa-pencil-square-o"></i>@Html.ActionLink("Edit", "Edit", new { rut = item.rut }) |
+                <i class="fa fa-eye" aria-hidden="true"></i>@Html.ActionLink("Details", "Details", new { rut = item.rut }) |
+                <i class="fa fa-trash-o" aria-hidden="true"></i>@Html.ActionLink("Delete", "Delete", new { rut = item.rut })
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@section Scripts
+{
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#example").DataTable();
+        });
+    </script>
+}

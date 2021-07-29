@@ -38,10 +38,38 @@ namespace Vista.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View(new usuarios_dto());
+        }
+
+        [HttpPost]
+        public IActionResult Add(usuarios_dto model)
+        {
+            usuarios_dao dao = new usuarios_dao();
+            dao.Guardar(model);
+            return RedirectToAction("Index");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpGet]
+        public IActionResult Details(string rut)
+        {
+            usuarios_dao dao = new usuarios_dao();
+            IEnumerable<usuarios_dto> dtos = new List<usuarios_dto>();
+            usuarios_dto dto = new usuarios_dto();
+            dtos = dao.Obtener(rut);
+            foreach (var dato in dtos)
+            {
+                dto = dato;
+            }
+            return View(dto);
         }
 
         [HttpGet]
@@ -63,6 +91,14 @@ namespace Vista.Controllers
         {
             usuarios_dao dao = new usuarios_dao();
             dao.Guardar(dto);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(string rut)
+        {
+            usuarios_dao dao = new usuarios_dao();
+            dao.Eliminar(rut);
             return RedirectToAction("Index");
         }
 
