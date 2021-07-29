@@ -1,0 +1,4 @@
+{
+  "sqlserver": "host:sql5085.site4now.net,user:DB_A49E00_CM2_admin,password:mauro123,db:DB_A49E00_CM2,port:1502",
+  "mysql": "Server=host;Database=db;User;ID=sa;Password=123"
+}
