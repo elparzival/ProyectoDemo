@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DaoRepository.usuarios_dto>
+
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<h1>Usuarios</h1>
+
+<p>
+    <a asp-action="Add">Agregar usuario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.rut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_completo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_completo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { rut = item.rut }) |
+                    @Html.ActionLink("Details", "Details", new { rut = item.rut }) |
+                    @Html.ActionLink("Delete", "Delete", new { rut = item.rut })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

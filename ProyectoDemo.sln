@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{2ADE59B1-793C-420E-BBF4-4E97AF2C7E77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaoRepository", "DaoRepository\DaoRepository.csproj", "{43E5932F-435D-4F64-B831-8FF7F3DF37A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "Vista\Vista.csproj", "{50D60583-610B-4C84-86D6-D2FCA5AE5006}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{2ADE59B1-793C-420E-BBF4-4E97AF2C7E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ADE59B1-793C-420E-BBF4-4E97AF2C7E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ADE59B1-793C-420E-BBF4-4E97AF2C7E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E5932F-435D-4F64-B831-8FF7F3DF37A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E5932F-435D-4F64-B831-8FF7F3DF37A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E5932F-435D-4F64-B831-8FF7F3DF37A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E5932F-435D-4F64-B831-8FF7F3DF37A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D60583-610B-4C84-86D6-D2FCA5AE5006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D60583-610B-4C84-86D6-D2FCA5AE5006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D60583-610B-4C84-86D6-D2FCA5AE5006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D60583-610B-4C84-86D6-D2FCA5AE5006}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

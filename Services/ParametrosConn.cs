@@ -13,5 +13,7 @@ namespace Services
         public string sqlserver { get; set; }
         public string mysql { get; set; }
         public string postgres { get; set; }
+        public string oracle { get; set; }
+        public string mock { get; set; }
     }
 }
